@@ -1,0 +1,4 @@
+a2_solution_submitting_to_github.py
+__pycache__/
+.vscode/
+.pytest_cache/
