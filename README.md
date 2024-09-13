@@ -9,7 +9,7 @@ You can watch [this video](https://www.youtube.com) or read [this tutorial](http
 ## Logical Flow
 1. Before doing any of this, make sure you watch the video linked above, or read the instructions so you understand how to run the tests included with the assignment and how to turn the assignment in.
 2. Using the ***input()*** function, ask the user:
-    - > Please enter a whole number: 
+    - `Please enter a whole number: `
     - Assume that the user will always enter a valid whole number.
     - Store the number in a variable
 3. Convert the number to an ***int*** datatype.
