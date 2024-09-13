@@ -18,9 +18,9 @@ You can watch [this video](https://www.youtube.com) or read [this tutorial](http
     - But with actual values. For example, if the user entered *10*, then the message should display as:
     - `10 divided by 2 is 5.`
 
-<!-- This text is hidden and will not be displayed in the rendered output. -->
+
 <p style="opacity: 0;">This is fully transparent text.</p>
- text inside a visible sentence.</p>
+
 Be sure to include comments in your code. Push your code to your GitHub repository in order to receive credit for the assignment
 
 
