@@ -1,7 +1,8 @@
 import re
 import pytest
 
-def test_4_check_comments():
+def test_4_sufficient_comments():
+    required_num_comments = 3
     # Open and read the student's script as a string
     with open("a2_submitting_to_github.py", "r") as file:
         script_content = file.read()
@@ -20,4 +21,4 @@ def test_4_check_comments():
     num_comments = len(comments)
 
     # Ensure there are at least 3 comments
-    assert num_comments >= 3, f"\n\nNot enough comments found. You need at least 3. Only {num_comments} comment(s) detected."
+    assert num_comments >= required_num_comments, f"\n\nNot enough comments found. You need at least {required_num_comments}. Only {num_comments} comment(s) detected."

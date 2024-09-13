@@ -1,15 +1,38 @@
 import pytest
 import re
 
-
 # Removes extra spaces, punctuation, and makes the text lowercase.
 # Also normalizes any sequences of multiple spaces into a single space.
+
 def normalize_text(text):
-    lines = text.splitlines()  # Split the text into lines
-    cleaned_lines = [re.sub(r'[^\w\s]', '', line).strip().lower() for line in lines if line.strip()]
-    normalized_text = ' '.join(cleaned_lines)  # Join all cleaned lines into a single string
-    normalized_text = re.sub(r'\s+', ' ', normalized_text)  # Replace multiple spaces/tabs with a single space
-    return normalized_text
+    # Lowercase the input
+    text = text.lower()
+    
+    # Replace newlines with a single space
+    text = text.replace('\n', ' ')
+    
+    # Replace multiple spaces with a single space
+    text = re.sub(r'\s+', ' ', text)
+    
+    # Remove periods not between digits
+    text = re.sub(r'(?<!\d)\.(?!\d)', '', text)
+    
+    # Remove hyphens not followed by digits (negative signs at the beginning of numbers)
+    text = re.sub(r'-(?!\d)', '', text)
+    
+    # Remove all other punctuation and symbols
+    text = re.sub(r'[!"#$%&\'()*+,/:;<=>?@\[\]^_`{|}~]', '', text)
+    
+    # Replace multiple spaces again in case punctuation removal created extra spaces
+    text = re.sub(r'\s+', ' ', text)
+    
+    # Strip leading and trailing spaces
+    return text.strip()
+
+
+@pytest.fixture
+def inputs_and_expected_outputs():
+    return [('10', 5.0), ('0', 0.0), ('15', 7.5), ('-100', -50.0)]
 
 # this replaces the built in input() function using monkeypatch. Can be called by any test.
 # it needs to be called for any assignment that uses the input() function, as that will cause
@@ -19,17 +42,17 @@ def mock_inputs(monkeypatch):
     # Create a function to set inputs
     def _mock_inputs(simulated_inputs):
         input_iter = iter(simulated_inputs)
-        captured_prompts = []
+        captured_input_prompts = []
 
         # Define the mock input function
         def mock_input(prompt):
-            captured_prompts.append(prompt)
+            captured_input_prompts.append(prompt)
             return next(input_iter, '') # grabs the next input, or a blank string if empty
 
         # Use monkeypatch to replace the built-in input() with the mock input function
         monkeypatch.setattr('builtins.input', mock_input)
 
-        return captured_prompts
+        return captured_input_prompts
 
     return _mock_inputs
 
