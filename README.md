@@ -8,15 +8,15 @@ You can watch [this video](https://www.youtube.com) or read [this tutorial](http
 
 ## Logical Flow
 1. Before doing any of this, make sure you watch the video linked above, or read the instructions so you understand how to run the tests included with the assignment and how to turn the assignment in.
-2. Using the ***input()*** function, ask the user:
+2. Using the `input()` function, ask the user:
     - `Please enter a whole number: `
     - Assume that the user will always enter a valid whole number.
     - Store the number in a variable
-3. Convert the number to an ***int*** datatype.
+3. Convert the number to an `int` datatype.
 4. Print out the message:
     - `<number from input> divided by 2 is <new number>.`
     - But with actual values. For example, if the user entered *10*, then the message should display as:
-    - `10 divided by 2 is 5.`
+    - `10 divided by 2 is 5.0.`
 
 
 Be sure to include comments in your code. Push your code to your GitHub repository in order to receive credit for the assignment
@@ -25,11 +25,11 @@ Be sure to include comments in your code. Push your code to your GitHub reposito
 
 ```
 Please enter a whole number: 10
-10 divided by 2 is 5.0
+10 divided by 2 is 5.0.
 ```
 
 ## Rubric
-This assignment contains 4 automated tests. The tests will ignore capitalization and punctuation, but you will fail the tests if you spell something wrong, or calculate something incorrectly.
+This assignment contains 4 automated tests. The tests will ignore spacing, capitalization, and punctuation, but you will fail the tests if you spell something wrong or calculate something incorrectly.
 <table>
 <thead>
     <tr>
