@@ -14,10 +14,13 @@ You can watch [this video](https://www.youtube.com) or read [this tutorial](http
     - Store the number in a variable
 3. Convert the number to an ***int*** datatype.
 4. Print out the message:
-    - >*number* divided by 2 is *new_number*
+    - `<number from input> divided by 2 is <new number>.`
     - But with actual values. For example, if the user entered *10*, then the message should display as:
-    - > 10 divided by 2 is 5
+    - `10 divided by 2 is 5.`
 
+<!-- This text is hidden and will not be displayed in the rendered output. -->
+<p style="opacity: 0;">This is fully transparent text.</p>
+ text inside a visible sentence.</p>
 Be sure to include comments in your code. Push your code to your GitHub repository in order to receive credit for the assignment
 
 
