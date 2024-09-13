@@ -3,10 +3,14 @@ import pytest
 
 def test_4_check_comments():
     # Open and read the student's script as a string
-    with open("a2_solution_submitting_to_github.py", "r") as file:
+    with open("a2_submitting_to_github.py", "r") as file:
         script_content = file.read()
 
     # Regex to match single-line comments (#) and multi-line comments (''' ''' or """ """)
+    # . is any character except new line
+    # * means 0 or many occurrences of the previous character
+    # \s means spaces \S is any non-space character, meaning it gets everything including new lines
+    # *? is a non-greedy match
     comment_pattern = r"(#.*)|('''[\s\S]*?'''|\"\"\"[\s\S]*?\"\"\")"
 
     # Find all matches for comments
