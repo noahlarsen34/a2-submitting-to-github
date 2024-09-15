@@ -87,5 +87,9 @@ This assignment contains 4 automated tests. The tests will ignore spacing, capit
         <td>Your code must include at least <code>3</code> comments. You can use <code>#</code>, <code>''' '''</code>, or <code>""" """</code></td>
         <td>10</td>
     </tr>
+    <tr>
+        <td colspan="2">Total Points</td>
+        <td>100</td>
+  </tr>
 </tbody>
 </table>
