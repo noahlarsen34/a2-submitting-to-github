@@ -1,8 +1,17 @@
 import pytest
 import re
+import sys
+import importlib
 
-# Removes extra spaces, punctuation, and makes the text lowercase.
-# Also normalizes any sequences of multiple spaces into a single space.
+# Enter the name of the file to be tested here, but leave out the .py file extention.
+module_to_test = "a2_submitting_to_github"
+
+def load_or_reload_module():
+    if module_to_test in sys.modules:
+        module = sys.modules[module_to_test]
+        importlib.reload(module)          
+    else:
+        module = importlib.import_module(module_to_test)
 
 def normalize_text(text):
     # Lowercase the input

@@ -1,6 +1,6 @@
-from conftest import normalize_text
-import pytest
+from conftest import normalize_text, load_or_reload_module
 import importlib
+import sys
 
 # checks if the expected printed messages actually appear, but doesn't check for specific
 # inputs or correct calculations.
@@ -13,9 +13,8 @@ def test_2_printed_messages(capsys, mock_inputs):
     # Call the fixture to mock input() with the desired inputs
     _ = mock_inputs(inputs)
 
-    # Import the student's script
-    import a2_submitting_to_github
-    importlib.reload(a2_submitting_to_github)
+    # Load the module (if it is the first test run) or reload it into memory to reset global functions.
+    load_or_reload_module()
 
     # Capture the output from the print statements
     captured = capsys.readouterr().out
