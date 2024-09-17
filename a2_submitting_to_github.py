@@ -1,5 +1,6 @@
-# Name:
-# Description:  Enter your code below. You can test your code using the testing tab on the left.
-#               When finished, upload your code by going to the source control tab, committing your code, and then syncing it.
-#               Replace this text with your own description of what your code does.
+# Name: Noah Larsen
+# Description: Entering a whole number, converting it to an integer, and dividing it by 2
+number = int(input("Please enter a whole number")) # converts string into intger while asking user to input whole number
+new_number = number / 2  # divide whole number by 2
+print(f"{number} divided by 2 is {new_number}")
 
